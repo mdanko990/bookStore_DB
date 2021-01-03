@@ -1,0 +1,43 @@
+
+
+<!DOCTYPE html>
+<html xmlns:form="http://www.springframework.org/tags/form" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Edit Book</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+    <h1>Book Online Store</h1>
+    <hr>
+    <h2>Update Book</h2>
+
+    <form action="#" th:action="@{/save}" th:object="${book}"
+          method="POST">
+
+        <!-- Add hidden form field to handle update -->
+        <input type="hidden" th:field="*{id}" />
+<br>
+        <input type="text" th:field="*{name}" class="form-control mb-4 col-4">
+        <br>
+        <input type="text" th:field="*{author}" class="form-control mb-4 col-4">
+        <br>
+        <input type="text" th:field="*{genre}" class="form-control mb-4 col-4">
+        <br>
+        <input type="text" th:field="*{price}" class="form-control mb-4 col-4">
+        <br>
+        <button type="submit" class="btn btn-info col-2"> Update </button>
+    </form>
+
+    <hr>
+
+    <a th:href = "@{/updateList}"> Back to Book List</a>
+</div>
+</body>
+</html>
